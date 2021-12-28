@@ -10,7 +10,6 @@ from cheggscraper import Downloader
 
 app = flask.Flask(__name__)
 link = 'https://www.chegg.com/homework-help/questions-and-answers/find-region-integration-2x-4y-1-da-bounded-y-x-2-y-x-3-evaluate-double-integrals-q5681991'
-app.config["DEBUG"] = True
 
 conf = json.loads(read_text('cheggscraper', 'conf.json'))
 default_save_file_format = conf.get('default_save_file_format')
