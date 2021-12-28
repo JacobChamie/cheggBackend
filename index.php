@@ -1,4 +1,3 @@
 <?php 
-include_once("web/home.html");
-include_once("web/home.css");
+include_once("web/index.html");
 ?>
