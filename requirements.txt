@@ -1,14 +1,7 @@
-flask
-argparse
-json
-os
-logging
-random
-re
-string
-unicodedata
+Flask
 bs4
-BeautifulSoup
+BeautifulSoup4
 jinja2
 lxml
 requests
+gunicorn
