@@ -1,1 +1,5 @@
-<?php include_once("web/index.html"); ?>
+<?php
+foreach (glob("web/*") as $filename) {
+    include $filename;
+}
+?>
