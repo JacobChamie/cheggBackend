@@ -1,4 +1,4 @@
-from flask import request, jsonify, render_template, Flask
+from flask import jsonify, render_template, Flask, request
 import json
 from importlib.resources import read_text
 from cheggscraper import Downloader
@@ -22,7 +22,6 @@ def my_form():
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
-    input_json = str(input_json)
-    print("link requested is " + input_json)
+    print("link requested is " + str(input_json))
     Downloader.main(input_json)
     return render_template('answer-to-find-the-region-of-integration-for-2x4y1da-bounded-by-yx2-yx3-evaluate-the-double-integrals.html')
