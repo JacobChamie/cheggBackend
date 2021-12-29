@@ -1,2 +1,2 @@
 ps: scale web = 1
-web: gunicorn flaskAPI:app
+web: gunicorn -b :$PORT flaskAPI:app
