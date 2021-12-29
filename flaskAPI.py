@@ -14,8 +14,6 @@ conf = json.loads(read_text('cheggscraper', 'conf.json'))
 default_save_file_format = conf.get('default_save_file_format')
 default_cookie_file_path = conf.get('default_cookie_file_path')
 
-
-
 @app.route('/')
 def my_form():
     return render_template('index.html')
@@ -27,4 +25,3 @@ def getAnswer():
     print("link requested is " + input_json)
     Downloader.main(input_json)
     return "success"
-app.run()
