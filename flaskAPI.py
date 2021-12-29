@@ -25,5 +25,3 @@ def getAnswer():
     print("link requested is " + input_json)
     Downloader.main(input_json)
     return "success"
-
-app.run()
