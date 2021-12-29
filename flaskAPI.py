@@ -6,9 +6,14 @@ from cheggscraper import Downloader
 app = Flask(__name__, template_folder='')
 link = 'https://www.chegg.com/homework-help/questions-and-answers/find-region-integration-2x-4y-1-da-bounded-y-x-2-y-x-3-evaluate-double-integrals-q5681991'
 
+parseAnswer = ""
+
+
 conf = json.loads(read_text('cheggscraper', 'conf.json'))
 default_save_file_format = conf.get('default_save_file_format')
 default_cookie_file_path = conf.get('default_cookie_file_path')
+
+
 
 @app.route('/')
 def my_form():
@@ -19,5 +24,5 @@ def getAnswer():
     input_json = request.args.get('link')
     input_json = str(input_json)
     print("link requested is " + input_json)
-    #Downloader.main(input_json)
-    return "success"
+    Downloader.main(input_json)
+    return render_template('answer-to-find-the-region-of-integration-for-2x4y1da-bounded-by-yx2-yx3-evaluate-the-double-integrals.html')
