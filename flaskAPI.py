@@ -6,7 +6,7 @@ import logging
 import sys
 
 
-app = Flask(__name__, template_folder='')
+app = Flask(__name__, template_folder='templates')
 link = 'https://www.chegg.com/homework-help/questions-and-answers/find-region-integration-2x-4y-1-da-bounded-y-x-2-y-x-3-evaluate-double-integrals-q5681991'
 
 parseAnswer = ""
@@ -26,7 +26,7 @@ def my_form():
 def getAnswer():
     input_json = request.args.get('link')
     print("link requested is " + str(input_json))
-    Downloader.main(str(input_json))
+    #Downloader.main(str(input_json))
     return render_template('answer-to-find-the-region-of-integration-for-2x4y1da-bounded-by-yx2-yx3-evaluate-the-double-integrals.html')
 
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
