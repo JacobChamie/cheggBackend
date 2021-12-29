@@ -19,5 +19,5 @@ def getAnswer():
     input_json = request.args.get('link')
     input_json = str(input_json)
     print("link requested is " + input_json)
-    Downloader.main(input_json)
+    #Downloader.main(input_json)
     return "success"
