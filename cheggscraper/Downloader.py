@@ -2,6 +2,7 @@ import argparse
 import json
 import os
 from importlib.resources import read_text
+from re import template
 
 from .CheggScraper import CheggScraper
 
@@ -26,7 +27,7 @@ def main(url):
 
     # if not os.path.exists(path=args['cookie_file']):
     #     raise Exception(f'{args["cookie_file"]} does not exists')
-    Chegg = CheggScraper(cookie_path=default_cookie_file_path)
+    Chegg = CheggScraper(template_path='templates/', cookie_path=default_cookie_file_path)
     Chegg.url_to_html(url, file_name_format=default_save_file_format)
 
     #if not args.get('url'):

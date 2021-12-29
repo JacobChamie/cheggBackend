@@ -1364,7 +1364,7 @@ y=x^3</p>
         <script src="https://c.cheggcdn.com/_r/b83e0420e158bee2e502d12af75d4a55.js" defer></script>
 
 <script type="text/javascript">
-    window._searchInitialState = {"configs":{"environment":"prod","token":"aa137b37472a063d4c2e12798ad3ac1f","userUuid":"d7d00710-8e0d-49ab-ac90-a68c3eedf759","season":"NONE","location":"CS","pageName":"Question Page","isMobile":false,"autosuggest":{"uniqueId":"header-autosuggest","profile":"federated-chegg-study-auto","placeholder":"Find solutions for your homework"}}} || {};
+    window._searchInitialState = {"configs":{"environment":"prod","token":"e8fe056dc4d321d05cafb518f6b53846","userUuid":"d7d00710-8e0d-49ab-ac90-a68c3eedf759","season":"NONE","location":"CS","pageName":"Question Page","isMobile":false,"autosuggest":{"uniqueId":"header-autosuggest","profile":"federated-chegg-study-auto","placeholder":"Find solutions for your homework"}}} || {};
 </script>
 
 <script src="https://components.cheggcdn.com/components/oc-client/0.42.16/src/oc-client.min.js" defer></script>
@@ -1375,7 +1375,7 @@ y=x^3</p>
       C.global.cachedJS["//c.cheggcdn.com/_r/d0ed035a0a6c0bafe9598086629ee4e5.js"] = true
 C.global.cachedJS["//c.cheggcdn.com/_r/b83e0420e158bee2e502d12af75d4a55.js"] = true;
 
-      C.global.csrfToken = 'aa137b37472a063d4c2e12798ad3ac1f';
+      C.global.csrfToken = 'e8fe056dc4d321d05cafb518f6b53846';
 C.global.staticBaseUrl = 'https://c.cheggcdn.com/';
 C.global.assetUrl = 'https://c.cheggcdn.com/assets/';
 C.global.coversBaseUrl = '//cs.cheggcdn.com/';
@@ -1405,8 +1405,8 @@ C.global.disableErrorhandling = false;
 C.global.version = '3.0';
 C.global.facebookAppId = '107051471700';
 C('logger');
-C.logger.loadTime=1640810017.6778;
-C.logger.pageTrackId='2e660542f5eba7e992f6a9b89ca9c19b';
+C.logger.loadTime=1640810716.9434;
+C.logger.pageTrackId='ef5900265195d66671f0d7162ab5a7e9';
 C.global.showViewMobileSiteButton = false;
 C.global.hasHiddenSearchBox = false;
 C.global.tbResults = 'ten_results';
@@ -1486,7 +1486,7 @@ C.global.season = 'rm-winter1';
 
             </script>
 
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"1fabaefecb","applicationID":"61712648","transactionName":"NQcDYUAEXxJYUhFfXQxNIkBBEV4MFlINUR8qDQxQRQpDClFUCUZtMxcERkYMXg9mZwxTRQ==","queueTime":0,"applicationTime":653,"atts":"GUAUFwgeTE0bUEcMSR8f","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"1fabaefecb","applicationID":"61712648","transactionName":"NQcDYUAEXxJYUhFfXQxNIkBBEV4MFlINUR8qDQxQRQpDClFUCUZtMxcERkYMXg9mZwxTRQ==","queueTime":0,"applicationTime":555,"atts":"GUAUFwgeTE0bUEcMSR8f","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
 </html>
 HTML
 
