@@ -28,6 +28,3 @@ def getAnswer():
     print("link requested is " + str(input_json))
     Downloader.main(link)
     return render_template('answer-to-find-the-region-of-integration-for-2x4y1da-bounded-by-yx2-yx3-evaluate-the-double-integrals.html')
-
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
