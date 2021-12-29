@@ -19,7 +19,8 @@ app.logger.setLevel(logging.ERROR)
 
 @app.route('/')
 def my_form():
-    return render_template('index.html')
+    #return render_template('index.html')
+    return "hello"
 
 @app.route('/get', methods=['GET'])
 def getAnswer():
