@@ -3,6 +3,7 @@ import json
 from importlib.resources import read_text
 from cheggscraper import Downloader
 import logging
+import sys
 
 
 app = Flask(__name__, template_folder='')
