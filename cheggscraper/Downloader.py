@@ -23,8 +23,8 @@ def main(url):
     #                 type=str, default=default_save_file_format, dest='file_format')
     # args = vars(ap.parse_args())
 
-    # if not os.path.exists(path=args['cookie_file']):
-    #     raise Exception(f'{args["cookie_file"]} does not exists')
+    if not os.path.exists(path=default_cookie_file_path):
+        raise Exception(f'{default_cookie_file_path} does not exists')
 
 
     Chegg = CheggScraper(cookie_path=default_cookie_file_path)
