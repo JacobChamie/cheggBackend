@@ -17,8 +17,8 @@ from .Exceptions import *
 
 logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
 
-main_template = Environment(loader=BaseLoader).from_string(read_text('cheggscraper', 'template.html'))
-chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('cheggscraper', 'chapter_type_frame.html'))
+main_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'template.html'))
+chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
 
 class CheggScraper:
