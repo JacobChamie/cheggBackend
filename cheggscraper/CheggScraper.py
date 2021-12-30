@@ -423,6 +423,7 @@ class CheggScraper:
         logging.debug("HTML\n\n" + html_text + "HTML\n\n")
 
         if soup.find('div', id='px-captcha'):
+            logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
             raise BotFlagError
 
         """Parse headers"""
