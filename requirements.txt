@@ -7,3 +7,5 @@ requests
 gunicorn
 php
 css
+logging
+sys
