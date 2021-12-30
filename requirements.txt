@@ -7,4 +7,3 @@ requests
 gunicorn
 php
 css
-sys
