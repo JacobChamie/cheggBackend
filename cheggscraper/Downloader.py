@@ -5,7 +5,6 @@ from importlib.resources import read_text
 from re import template
 from .CheggScraper import CheggScraper
 
-
 def main(url):
 
     conf = json.loads(read_text('cheggscraper', 'conf.json'))

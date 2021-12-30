@@ -12,7 +12,7 @@ from requests import Response
 from bs4 import BeautifulSoup
 from bs4.element import Tag 
 from jinja2 import Environment, BaseLoader
-
+import sys
 from .Exceptions import *
 
 logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
