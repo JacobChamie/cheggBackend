@@ -26,8 +26,8 @@ def my_form():
 def getAnswer():
     input_json = request.args.get('link')
     print("link requested is " + str(input_json))
-    Downloader.main(str(input_json))
+    Downloader.main(input_json)
     #return render_template('answer-to-find-the-region-of-integration-for-2x4y1da-bounded-by-yx2-yx3-evaluate-the-double-integrals.html')
     return "success"
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR) 
+app.logger.setLevel(logging.ERROR)
