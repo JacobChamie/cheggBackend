@@ -25,8 +25,8 @@ def main(url):
 
     if not os.path.exists(path=default_cookie_file_path):
         raise Exception(f'{default_cookie_file_path} does not exists')
-        
-    Chegg = CheggScraper(cookie_path=default_cookie_file_path)
+
+    Chegg = CheggScraper(cookie_path="cookie.txt")
     Chegg.url_to_html(url, file_name_format=default_save_file_format)
 
     #if not args.get('url'):
