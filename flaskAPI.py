@@ -1,4 +1,4 @@
-from flask import jsonify, render_template, Flask, request
+from flask import render_template, Flask, request
 import json
 from importlib.resources import read_text
 from cheggscraper import Downloader
