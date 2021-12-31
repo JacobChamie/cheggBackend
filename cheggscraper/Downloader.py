@@ -31,7 +31,3 @@ def main(url):
 
     #if not args.get('url'):
         #args.update({'url': input('Enter url of the homework-help: ')})
-
-    
-    #if url == None:
-        #print(Chegg.url_to_html(args['url'], file_name_format=args['file_format']))
