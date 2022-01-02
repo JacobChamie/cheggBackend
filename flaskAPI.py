@@ -26,10 +26,10 @@ def buyPage():
 @app.route('/get', methods=['GET'])
 def urlLink():
     url = request.form['urlBox']
-    print(url)
-    parseAnswer = Downloader.main(url)
-    parseAnswer = str(parseAnswer)[10:]
-    return render_template(parseAnswer)
+    return str(url)
+    #parseAnswer = Downloader.main(url)
+    #parseAnswer = str(parseAnswer)[10:]
+    #return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
