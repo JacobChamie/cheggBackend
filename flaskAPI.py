@@ -23,7 +23,7 @@ def my_form():
 @app.route('/Page-1.html')
 def buyPage():
     return render_template('Page-1.html')
-@app.route('/get', methods=['GET'])
+@app.route('/urlBox', methods=['GET'])
 def urlLink():
     url = request.form['urlBox']
     return str(url)
