@@ -21,13 +21,16 @@ default_cookie_file_path = conf.get('default_cookie_file_path')
 @app.route('/')
 def my_form():
     return render_template('index.html')
+@app.route('/Page-1.html')
+def buyPage():
+    return render_template('Page-1.html')
 
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
-    #parseAnswer = Downloader.main(input_json)
-    #parseAnswer = str(parseAnswer)[10:]
-    #return render_template(parseAnswer)
-    return "success"
+    parseAnswer = Downloader.main(input_json)
+    parseAnswer = str(parseAnswer)[10:]
+    return render_template(parseAnswer)
+app.run(debug=True)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
