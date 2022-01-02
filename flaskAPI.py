@@ -4,7 +4,7 @@ from importlib.resources import read_text
 from cheggscraper import Downloader
 import logging
 import sys
-
+from cheggscraper import *
 
 app = Flask(__name__, template_folder='templates')
 link = 'https://www.chegg.com/homework-help/questions-and-answers/find-region-integration-2x-4y-1-da-bounded-y-x-2-y-x-3-evaluate-double-integrals-q5681991'
@@ -23,18 +23,20 @@ def my_form():
 @app.route('/Page-1.html')
 def buyPage():
     return render_template('Page-1.html')
-@app.route('/urlBox', methods=['GET'])
+@app.route('/urlBox')
 def urlLink():
-    url = request.form['urlBox']
-    # parseAnswer = Downloader.main(url)
-    # parseAnswer = str(parseAnswer)[10:]
-    # return render_template(parseAnswer)
-    return str(url)
+    url = request.args.get('urlBox')
+    parseAnswer = Downloader.main(url)
+    parseAnswer = str(parseAnswer)[10:]
+    return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+   return 'Chegg Link Error, please return to previous page and input correct URL', 500
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
