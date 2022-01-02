@@ -1,4 +1,4 @@
-from flask import render_template, Flask, request
+from flask import render_template, Flask, request, redirect, url_for
 import json
 from importlib.resources import read_text
 from cheggscraper import Downloader
@@ -26,10 +26,10 @@ def buyPage():
 @app.route('/urlBox', methods=['GET'])
 def urlLink():
     url = request.form['urlBox']
+    # parseAnswer = Downloader.main(url)
+    # parseAnswer = str(parseAnswer)[10:]
+    # return render_template(parseAnswer)
     return str(url)
-    #parseAnswer = Downloader.main(url)
-    #parseAnswer = str(parseAnswer)[10:]
-    #return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
