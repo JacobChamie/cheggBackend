@@ -133,7 +133,7 @@ class CheggScraper:
         return chapter_type_template.render(**_data)
 
     @staticmethod
-    def replace_src_links(html_text: str) -> str:
+    def replace_src_links(html_text: str):
         """
         Replace relative links from page, so even you are opening file without any host, still can see all contents,
         still some css and js won't load
@@ -423,8 +423,8 @@ class CheggScraper:
         soup = BeautifulSoup(html_text, 'lxml')
         logging.debug("HTML\n\n" + html_text + "HTML\n\n")
         logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
+        print(html_text)
         if soup.find('div', id='px-captcha'):
-            return html_text
             raise BotFlagError
 
         """Parse headers"""
