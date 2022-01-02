@@ -17,7 +17,6 @@ default_save_file_format = conf.get('default_save_file_format')
 default_cookie_file_path = conf.get('default_cookie_file_path')
 
 
-
 @app.route('/')
 def my_form():
     return render_template('index.html')
