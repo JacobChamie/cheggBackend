@@ -37,6 +37,6 @@ def getAnswer():
     return render_template(parseAnswer)
 @app.errorhandler(Exception)
 def all_exception_handler(error):
-   return 'Chegg Link Error, please return to previous page and input correct URL', 500
+    return "Chegg URL error, please return to previous page", 500
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
