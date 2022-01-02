@@ -24,7 +24,12 @@ def my_form():
 @app.route('/Page-1.html')
 def buyPage():
     return render_template('Page-1.html')
-
+@app.route('/', methods=['GET'])
+def urlLink():
+    url = request.form['urlBox']
+    parseAnswer = Downloader.main(url)
+    parseAnswer = str(parseAnswer)[10:]
+    return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
