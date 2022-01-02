@@ -427,6 +427,7 @@ class CheggScraper:
         soup.prettify()
         if soup.find('div', id='px-captcha'):
             print("BOT FLAG ERROR")
+            print(html_text)
             raise BotFlagError
 
         """Parse headers"""
