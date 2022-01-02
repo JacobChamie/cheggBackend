@@ -89,7 +89,7 @@ class CheggScraper:
         self.deviceFingerPrintId = self.cookie_dict.get('DFID')
 
     @staticmethod
-    def slugify(value: str, allow_unicode: bool = False) -> str:
+    def slugify(value: str, allow_unicode: bool = False):
         """
         slugify the names of files
 
@@ -109,7 +109,7 @@ class CheggScraper:
         return re.sub(r'[-\s]+', '-', value).strip('-_')
 
     @staticmethod
-    def render_chapter_type_html(data: dict) -> str:
+    def render_chapter_type_html(data: dict):
         """
         Render chapter type answers using data
 
@@ -146,7 +146,7 @@ class CheggScraper:
         return re.sub(r'src=\s*?"//(.*)?"', r'src="https://\1"', html_text)
 
     @staticmethod
-    def cookie_str_to_dict(cookie_str: str) -> dict:
+    def cookie_str_to_dict(cookie_str: str):
         """
         Convert cookie str to dict of key, value pairs
 
@@ -182,7 +182,7 @@ class CheggScraper:
             return False, None
 
     @staticmethod
-    def dict_to_cookie_str(cookie_dict: dict) -> str:
+    def dict_to_cookie_str(cookie_dict: dict):
         """
         Convert dict to cookie string
 
@@ -201,7 +201,7 @@ class CheggScraper:
         return cookie_str
 
     @staticmethod
-    def parse_cookie(cookie_path: str) -> str:
+    def parse_cookie(cookie_path: str):
         """
         Parse cookie from cookie_path
 
@@ -246,7 +246,7 @@ class CheggScraper:
         return chapter_type, 'https://www.' + match.group(0)
 
     @staticmethod
-    def final_touch(html_text: str) -> str:
+    def final_touch(html_text: str):
         """
         Final changes to final html code, like changing class of some divs
 
@@ -265,7 +265,7 @@ class CheggScraper:
 
     def _web_response(self, url: str, headers: dict = None, expected_status: tuple = (200,), note: str = None,
                       error_note: str = "Error in request", post: bool = False, data: dict = None,
-                      _json=None) -> Response:
+                      _json=None):
         """
         Returns response
 
@@ -295,7 +295,7 @@ class CheggScraper:
         return response
 
     def _get_response_text(self, url: str, headers: dict = None, expected_status: tuple = (200,),
-                           note: str = None, error_note: str = "Error in request") -> str:
+                           note: str = None, error_note: str = "Error in request"):
         """
         text response from web
 
@@ -307,7 +307,7 @@ class CheggScraper:
 
     def _get_response_dict(self, url: str, headers: dict = None, expected_status: tuple = (200,), note: str = None,
                            error_note: str = "Error in request", post: bool = False, data: dict = None,
-                           _json=None) -> dict:
+                           _json=None):
         """
         dict response from web
 
@@ -319,7 +319,7 @@ class CheggScraper:
         return response.json()
 
     @staticmethod
-    def _parse_question(soup: BeautifulSoup) -> Tag:
+    def _parse_question(soup: BeautifulSoup):
         """
         Simply parse question
 
@@ -333,7 +333,7 @@ class CheggScraper:
         return soup.find('div', {'class': 'question-body-text'})
 
     def _parse_answer(self, soup: BeautifulSoup, question_uuid: str, html_text: str, url: str,
-                      chapter_type: bool = False) -> str:
+                      chapter_type: bool = False):
         """
         Parse Answers as a div from soup
 
@@ -390,7 +390,7 @@ class CheggScraper:
         return answers__
 
     @staticmethod
-    def _parse_heading(soup: BeautifulSoup) -> str:
+    def _parse_heading(soup: BeautifulSoup):
         """
         Parse heading from html
 
