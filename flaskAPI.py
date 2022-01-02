@@ -25,9 +25,9 @@ def my_form():
 @app.route('/get', methods=['GET'])
 def getAnswer():
     input_json = request.args.get('link')
-    parseAnswer = Downloader.main(input_json)
-    parseAnswer = str(parseAnswer)[10:]
-    return render_template(parseAnswer)
-app.run(debug=True)
+    #parseAnswer = Downloader.main(input_json)
+    #parseAnswer = str(parseAnswer)[10:]
+    #return render_template(parseAnswer)
+    return "success"
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
