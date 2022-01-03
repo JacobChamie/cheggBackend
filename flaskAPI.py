@@ -25,8 +25,8 @@ def buyPage():
     return render_template('Page-1.html')
 @app.route('/urlBox')
 def urlLink():
-    #url = request.args.get('urlBox')
-    parseAnswer = Downloader.main(link)
+    url = request.args.get('urlBox')
+    parseAnswer = Downloader.main(url)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
@@ -35,8 +35,9 @@ def getAnswer():
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
-# @app.errorhandler(Exception)
-# def all_exception_handler(error):
-#     return "Chegg URL error, please return to previous page", 500
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    return "Chegg URL error, please return to previous page", 500
+app.run(debug=True)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
