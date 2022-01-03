@@ -25,7 +25,7 @@ class CheggScraper:
     Scrape html from chegg.com and store them in a way so you don't need cookie to view the file
     """
 
-    def __init__(self, cookie: str = None, cookie_path: str = "cookie.txt", user_agent: str = None, base_path: str = None,
+    def __init__(self, cookie: str = None, cookie_path: str = None, user_agent: str = None, base_path: str = None,
                  save_file_format: str = None, config: dict = None, template_path: str = None,
                  extra_header_tag: str = None):
 
@@ -46,7 +46,6 @@ class CheggScraper:
             self.cookie = cookie
         else:
             self.cookie = self.parse_cookie(cookie_path)
-            print(self.cookie)
 
         self.cookie_dict = self.cookie_str_to_dict(self.cookie)
 
