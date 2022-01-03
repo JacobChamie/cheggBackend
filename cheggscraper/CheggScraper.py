@@ -70,7 +70,7 @@ class CheggScraper:
 
         self.headers = {
             'authority': 'www.chegg.com',
-            # 'cache-control': 'max-age=0',
+            'cache-control': 'max-age=0',
             "Accept-Encoding": "gzip, deflate, br",
             'accept-language': 'en-US,en;q=0.9',
             'cookie': self.cookie,
