@@ -132,7 +132,7 @@ class CheggScraper:
             'totalSteps': solutionV2['totalSteps'],
             'steps': solutionV2['steps'],
         }
-
+        
         return chapter_type_template.render(**_data)
 
     @staticmethod

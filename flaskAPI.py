@@ -25,8 +25,8 @@ def buyPage():
     return render_template('Page-1.html')
 @app.route('/urlBox')
 def urlLink():
-    url = request.args.get('urlBox')
-    parseAnswer = Downloader.main(url)
+    #url = request.args.get('urlBox')
+    parseAnswer = Downloader.main(link)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
