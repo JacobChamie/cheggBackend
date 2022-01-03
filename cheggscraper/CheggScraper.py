@@ -20,10 +20,10 @@ logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
 main_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'template.html'))
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
-proxies = {
-    "http": 'http://a9han2ryr3glus:ty23bmvz6zg676oh5yz5cm32x5k@us-east-static-09.quotaguard.com:9293',
-    "https": 'http://a9han2ryr3glus:ty23bmvz6zg676oh5yz5cm32x5k@us-east-static-09.quotaguard.com:9293'
-}
+# _proxies = {
+#     "http": 'http://a9han2ryr3glus:ty23bmvz6zg676oh5yz5cm32x5k@us-east-static-09.quotaguard.com:9293',
+#     "https": 'http://a9han2ryr3glus:ty23bmvz6zg676oh5yz5cm32x5k@us-east-static-09.quotaguard.com:9293'
+# }
 
 class CheggScraper:
     """
@@ -423,7 +423,6 @@ class CheggScraper:
 
     def _parse(self, html_text: str, url: str, chapter_type: bool = None):
         html_text = self.replace_src_links(html_text)
-        #html_text = requests.get(url, proxies=proxies)
         soup = BeautifulSoup(html_text, 'lxml')
         logging.debug("HTML\n\n" + html_text + "HTML\n\n")
         logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
