@@ -283,14 +283,12 @@ class CheggScraper:
                 url=url,
                 headers=headers,
                 json=_json,
-                data=data,
-                proxies=proxies
+                data=data
             )
         else:
             response = requests.get(
                 url=url,
-                headers=headers,
-                proxies=proxies)
+                headers=headers)
 
         if response.status_code not in expected_status:
             logging.error(msg=f'Expected status code {expected_status} but got {response.status_code}\n{error_note}')
