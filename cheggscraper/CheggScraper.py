@@ -422,7 +422,7 @@ class CheggScraper:
         soup = BeautifulSoup(html_text, 'lxml')
         logging.debug("HTML\n\n" + html_text + "HTML\n\n")
         logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
-        print(html_text)
+
         if soup.find('div', id='px-captcha'):
             raise BotFlagError
 
