@@ -5,3 +5,5 @@ jinja2
 lxml
 requests
 gunicorn
+importlib
+importlib-resources
