@@ -132,7 +132,7 @@ class CheggScraper:
             'totalSteps': solutionV2['totalSteps'],
             'steps': solutionV2['steps'],
         }
-        
+
         return chapter_type_template.render(**_data)
 
     @staticmethod
@@ -367,7 +367,7 @@ class CheggScraper:
                 },
                 "token": token
             }
-            graphql_url = 'https://www.chegg.com/study/_ajax/persistquerygraphql'
+            graphql_url = 'https://www.chegg.com/study/_ajax/contentfeedback/getreview?entityType=ANSWER&entityId=23121'
 
             res_data = self._get_response_dict(url=graphql_url, post=True, _json=query)
             return self.render_chapter_type_html(res_data)
