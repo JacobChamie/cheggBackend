@@ -289,7 +289,6 @@ class CheggScraper:
         else:
             response = requests.get(
                 url=url,
-                proxies=_proxies,
                 headers=headers)
 
         if response.status_code not in expected_status:
