@@ -21,8 +21,8 @@ main_template = Environment(loader=BaseLoader).from_string(read_text('templates'
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
 _proxies = {
-    "http": 'http://q7w33udy5bj3h6:znubk5cvu8100pixfs3l191u97n1@us-east-static-09.quotaguard.com:9293',
-    "https": 'http://q7w33udy5bj3h6:znubk5cvu8100pixfs3l191u97n1@us-east-static-09.quotaguard.com:9293'
+    "http": 'http://45.79.188.77:80',
+    "https": 'http://45.79.188.77:80'
 }
 
 class CheggScraper:
@@ -283,13 +283,14 @@ class CheggScraper:
                 url=url,
                 headers=headers,
                 json=_json,
-                data=data  ,
+                data=data,
                 proxies=_proxies          
                 )
         else:
             response = requests.get(
                 url=url,
-                headers=headers)
+                headers=headers,
+                proxies=_proxies)
 
         if response.status_code not in expected_status:
             logging.error(msg=f'Expected status code {expected_status} but got {response.status_code}\n{error_note}')

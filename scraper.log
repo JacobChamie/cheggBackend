@@ -7,7 +7,7 @@ DEBUG:root:HTML
 
 <!DOCTYPE html>
 <html lang="en" class="wf-active">
-    <!--  7979a528f397 | twig:1.41.0-DEV | cluster: cheggstudy | fullConf: prod-cheggstudy -->
+    <!--  caa645daec53 | twig:1.41.0-DEV | cluster: cheggstudy | fullConf: prod-cheggstudy -->
 <head>
         <meta name="format-detection" content="telephone=no">
 
@@ -1405,8 +1405,8 @@ C.global.disableErrorhandling = false;
 C.global.version = '3.0';
 C.global.facebookAppId = '107051471700';
 C('logger');
-C.logger.loadTime=1641341984.3443;
-C.logger.pageTrackId='8165b8a619cba9b36f250e03189c327c';
+C.logger.loadTime=1641343532.211;
+C.logger.pageTrackId='343f785ed21a702e2757404739674027';
 C.global.showViewMobileSiteButton = false;
 C.global.hasHiddenSearchBox = false;
 C.global.tbResults = 'ten_results';
@@ -1486,7 +1486,7 @@ C.global.season = 'rm-winter2';
 
             </script>
 
-    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"1fabaefecb","applicationID":"61712648","transactionName":"NQcDYUAEXxJYUhFfXQxNIkBBEV4MFlINUR8qDQxQRQpDClFUCUZtMxcERkYMXg9mZwxTRQ==","queueTime":0,"applicationTime":510,"atts":"GUAUFwgeTE0bUEcMSR8f","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
+    <script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"1fabaefecb","applicationID":"61712648","transactionName":"NQcDYUAEXxJYUhFfXQxNIkBBEV4MFlINUR8qDQxQRQpDClFUCUZtMxcERkYMXg9mZwxTRQ==","queueTime":0,"applicationTime":576,"atts":"GUAUFwgeTE0bUEcMSR8f","errorBeacon":"bam-cell.nr-data.net","agent":""}</script></body>
 </html>
 HTML
 
