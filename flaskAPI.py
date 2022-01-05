@@ -36,8 +36,8 @@ def getAnswer():
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
-# @app.errorhandler(Exception)
-# def all_exception_handler(error):
-#     return "Chegg URL error, please return to previous page", 500
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    return "Chegg URL error, please return to previous page", 500
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
