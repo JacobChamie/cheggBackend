@@ -21,8 +21,8 @@ main_template = Environment(loader=BaseLoader).from_string(read_text('templates'
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
 _proxies = {
-    "http": 'http://45.79.188.77:80',
-    "https": 'http://45.79.188.77:80'
+    "http": 'http://q7w33udy5bj3h6:znubk5cvu8100pixfs3l191u97n1@us-east-static-09.quotaguard.com:9293',
+    "https": 'http://q7w33udy5bj3h6:znubk5cvu8100pixfs3l191u97n1@us-east-static-09.quotaguard.com:9293'
 }
 
 class CheggScraper:
