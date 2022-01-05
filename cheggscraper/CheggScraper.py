@@ -281,11 +281,11 @@ class CheggScraper:
         if post:
             response = requests.post(
                 url=url,
-                proxies=_proxies,
                 headers=headers,
                 json=_json,
-                data=data
-            )
+                data=data  ,
+                proxies=_proxies          
+                )
         else:
             response = requests.get(
                 url=url,
