@@ -25,6 +25,7 @@ _proxies = {
     "https": 'http://m05ns0wroormzu:69geq8tgt3khfpgpm860csbs20x@us-east-static-09.quotaguard.com:9293'
 }
 
+
 class CheggScraper:
     """
     Scrape html from chegg.com and store them in a way so you don't need cookie to view the file
