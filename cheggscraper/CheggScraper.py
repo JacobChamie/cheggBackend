@@ -21,8 +21,8 @@ main_template = Environment(loader=BaseLoader).from_string(read_text('templates'
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
 _proxies = {
-    "http": 'http://m05ns0wroormzu:69geq8tgt3khfpgpm860csbs20x@us-east-static-09.quotaguard.com:9293',
-    "https": 'http://m05ns0wroormzu:69geq8tgt3khfpgpm860csbs20x@us-east-static-09.quotaguard.com:9293'
+    "http": 'http://fc0lhsvm28wfj0:iwxnlol2veykn96fqydar060ep1hl@us-east-static-09.quotaguard.com:9293',
+    "https": 'http://fc0lhsvm28wfj0:iwxnlol2veykn96fqydar060ep1hl@us-east-static-09.quotaguard.com:9293'
 }
 
 
