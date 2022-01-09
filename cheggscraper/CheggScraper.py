@@ -20,10 +20,10 @@ logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
 main_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'template.html'))
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
 
-_proxies = {
-    "http": 'http://fixie:pKhb7DLfBETLZpZ@velodrome.usefixie.com:80',
-    "https": 'http://fixie:pKhb7DLfBETLZpZ@velodrome.usefixie.com:80'
-}
+# _proxies = {
+#     "http": 'http://fixie:pKhb7DLfBETLZpZ@velodrome.usefixie.com:80',
+#     "https": 'http://fixie:pKhb7DLfBETLZpZ@velodrome.usefixie.com:80'
+# }
 
 
 class CheggScraper:
