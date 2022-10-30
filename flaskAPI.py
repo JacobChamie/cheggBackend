@@ -24,6 +24,9 @@ def my_form():
 @app.route('/Page-1.html')
 def buyPage():
     return render_template('Page-1.html')
+@app.route('/login.html')
+def loginPage():
+    return render_template('login.html')
 @app.route('/urlBox')
 def urlLink():
     url = request.args.get('urlBox')
