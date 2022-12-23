@@ -55,5 +55,3 @@ def getAnswer():
 @app.errorhandler(Exception)
 def all_exception_handler(error):
     return "Website under maintenence :), please return to previous page", 500
-app.logger.addHandler(logging.StreamHandler(sys.stdout))
-app.logger.setLevel(logging.ERROR)
