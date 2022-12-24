@@ -3,4 +3,3 @@ Flask==1.1.2
 Jinja2==2.11.3
 requests==2.26.0
 gunicorn
-markupsafe==2.0.1
