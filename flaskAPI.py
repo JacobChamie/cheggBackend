@@ -26,16 +26,16 @@ def my_form():
 @app.route('/Page-1.html')
 def buyPage():
     return render_template('Page-1.html')
-@app.route('/login.html', methods=['GET', 'POST'])
-def loginPage():
-    if request.method == 'GET':
-        return render_template('login.html')
-    username = request.form['username']
-    password = request.form['password']
-    if username in users and password == users[username]['password']:
-        return flask.redirect(flask.url_for('Page-1.html'))
-    else:
-        return render_template('login.html')
+# @app.route('/login.html', methods=['GET', 'POST'])
+# def loginPage():
+#     if request.method == 'GET':
+#         return render_template('login.html')
+#     username = request.form['username']
+#     password = request.form['password']
+#     if username in users and password == users[username]['password']:
+#         return flask.redirect(flask.url_for('Page-1.html'))
+#     else:
+#         return render_template('login.html')
 @app.route('/urlBox')
 def urlLink():
     url = request.args.get('urlBox')
