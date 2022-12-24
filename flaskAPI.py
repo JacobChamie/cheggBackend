@@ -21,11 +21,9 @@ default_cookie_file_path = conf.get('default_cookie_file_path')
 users = {'admin': {'password': 'admin'}}
 
 @app.route('/')
-@flask_login.login_required
 def my_form():
     return render_template('index.html')
 @app.route('/Page-1.html')
-@flask_login.login_required
 def buyPage():
     return render_template('Page-1.html')
 @app.route('/login.html', methods=['GET', 'POST'])
@@ -39,19 +37,14 @@ def loginPage():
     else:
         return render_template('login.html')
 @app.route('/urlBox')
-@flask_login.login_required
 def urlLink():
     url = request.args.get('urlBox')
     parseAnswer = Downloader.main(url)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
 @app.route('/get', methods=['GET'])
-@flask_login.login_required
 def getAnswer():
     input_json = request.args.get('link')
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
-@app.errorhandler(Exception)
-def all_exception_handler(error):
-    return "Website under maintenence :), please return to previous page", 500
