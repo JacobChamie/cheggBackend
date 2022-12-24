@@ -7,3 +7,4 @@ lxml
 requests==2.26.0
 gunicorn
 importlib-resources
+markupsafe==2.0.1
