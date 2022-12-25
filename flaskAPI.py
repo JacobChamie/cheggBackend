@@ -25,14 +25,17 @@ users = {'admin': {'password': 'admin'}}
 def my_form():
     return render_template('index.html')
 @app.route('/Page-1.html')
-@flask_login.login_required
+@flask_login.login_required3
 def buyPage():
     return render_template('Page-1.html')
 @app.route('/login.html', methods=['GET', 'POST'])
 def loginPage():
+    if request.method == 'GET':
+        return render_template('login.html')
     username = request.form['username']
     password = request.form['password']
     if username in users and password == users[username]['password']:
+        flask_login.login_user(user=0)
         return flask.redirect(flask.url_for('Page-1.html'))
     else:
         return render_template('login.html')
@@ -50,3 +53,6 @@ def getAnswer():
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    return "Website under maintenence :), please return to previous page", 500
