@@ -30,8 +30,6 @@ def buyPage():
     return render_template('Page-1.html')
 @app.route('/login.html', methods=['GET', 'POST'])
 def loginPage():
-    if request.method == 'GET':
-        return render_template('login.html')
     username = request.form['username']
     password = request.form['password']
     if username in users and password == users[username]['password']:
