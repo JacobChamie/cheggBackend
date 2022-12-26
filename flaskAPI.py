@@ -35,7 +35,7 @@ def user_loader(username):
     return user
 @login_manager.request_loader
 def request_loader(request):
-    username = request.form.get('username')
+    username = request.args.get('username')
     if username not in users:
         return
 
@@ -52,15 +52,22 @@ def buyPage():
     return render_template('Page-1.html')
 @app.route('/login.html', methods=['GET', 'POST'])
 def loginPage():
-    if request.method == 'GET':
-        return render_template('login.html')
+    if flask.request.method == 'GET':
+        return '''
+               <form action='login' method='POST'>
+                <input type='text' name='username' id='username' placeholder='username'/>
+                <input type='password' name='password' id='password' placeholder='password'/>
+                <input type='submit' name='submit'/>
+               </form>
+               '''
     username = request.args.get['username']
     password = request.args.get['password']
     if username in users and password == users[username]['password']:
-        flask_login.login_user(user=0)
+        user = User()
+        user.id = username
+        flask_login.login_user(user)
         return flask.redirect(flask.url_for('Page-1.html'))
-    else:
-        return render_template('login.html')
+    return 'Bad login'
 @app.route('/urlBox')
 @flask_login.login_required
 def urlLink():
