@@ -54,8 +54,8 @@ def buyPage():
 def loginPage():
     if request.method == 'GET':
         return render_template('login.html')
-    username = request.form['username']
-    password = request.form['password']
+    username = request.args.get['username']
+    password = request.args.get['password']
     if username in users and password == users[username]['password']:
         flask_login.login_user(user=0)
         return flask.redirect(flask.url_for('Page-1.html'))
