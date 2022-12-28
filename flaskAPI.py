@@ -1,3 +1,4 @@
+from curses import flash
 from flask import render_template, Flask, request, redirect, url_for
 import json
 from importlib.resources import read_text
@@ -21,10 +22,12 @@ default_cookie_file_path = conf.get('default_cookie_file_path')
 users = {'admin': {'password': 'admin'}}
 login_manager = flask_login.LoginManager()
 app = flask.Flask(__name__)
-app.secret_key = 'super secret string'
+app.secret_key = '8FE9384CB47FE9327FD175EED1449'
 login_manager.init_app(app)
+
 class User(flask_login.UserMixin):
     pass
+
 @login_manager.user_loader
 def user_loader(username):
     if username not in users:
@@ -33,41 +36,40 @@ def user_loader(username):
     user = User()
     user.id = username
     return user
+
 @login_manager.request_loader
 def request_loader(request):
-    username = request.args.get('username')
+    username = request.form.get('username')
     if username not in users:
         return
 
     user = User()
     user.id = username
     return user
+
 @app.route('/')
 @flask_login.login_required
-def my_form():
+def homepage():
     return render_template('index.html')
-@app.route('/Page-1.html')
-@flask_login.login_required
-def buyPage():
-    return render_template('Page-1.html')
-@app.route('/login.html', methods=['GET', 'POST'])
-def loginPage():
+
+@app.route('/login', methods=['GET', 'POST'])
+def login_page():
     if flask.request.method == 'GET':
-        return '''
-               <form action='login' method='POST'>
-                <input type='text' name='username' id='username' placeholder='username'/>
-                <input type='password' name='password' id='password' placeholder='password'/>
-                <input type='submit' name='submit'/>
-               </form>
-               '''
-    username = request.args.get['username']
-    password = request.args.get['password']
+        return render_template('login.html')
+    username = request.form['username']
+    password = request.form['password']
     if username in users and password == users[username]['password']:
         user = User()
         user.id = username
         flask_login.login_user(user)
-        return flask.redirect(flask.url_for('Page-1.html'))
+        return flask.redirect(flask.url_for('homepage'))
     return 'Bad login'
+
+@app.route('/Page-1')
+@flask_login.login_required
+def buyPage():
+    return render_template('Page-1.html')
+
 @app.route('/urlBox')
 @flask_login.login_required
 def urlLink():
@@ -75,6 +77,7 @@ def urlLink():
     parseAnswer = Downloader.main(url)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
+
 @app.route('/get', methods=['GET'])
 @flask_login.login_required
 def getAnswer():
@@ -82,6 +85,17 @@ def getAnswer():
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
+
 @app.errorhandler(Exception)
 def all_exception_handler(error):
-    return "Website under maintenence :), please return to previous page", 500
+    return "Exception Occurred: " + str(error)
+
+@login_manager.unauthorized_handler
+def handle_needs_login():
+    flash("You have to be logged in to access this page.")
+    return redirect(url_for('login_page'))
+
+@app.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return 'Logged out'
