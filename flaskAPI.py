@@ -1,4 +1,3 @@
-from curses import flash
 from flask import render_template, Flask, request, redirect, url_for
 import json
 from importlib.resources import read_text
@@ -92,7 +91,7 @@ def all_exception_handler(error):
 
 @login_manager.unauthorized_handler
 def handle_needs_login():
-    flash("You have to be logged in to access this page.")
+    flask.flash('You need to login first.')
     return redirect(url_for('login_page'))
 
 @app.route('/logout')
