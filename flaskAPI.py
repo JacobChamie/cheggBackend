@@ -64,10 +64,10 @@ def login_page():
         return flask.redirect(flask.url_for('homepage'))
     return 'Bad login'
 
-@app.route('/Page-1')
+@app.route('/Page-1.html')
 @flask_login.login_required
 def buyPage():
-    return render_template('Page-1')
+    return render_template('Page-1.html')
 
 @app.route('/urlBox')
 @flask_login.login_required
