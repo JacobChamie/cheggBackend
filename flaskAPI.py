@@ -67,7 +67,7 @@ def login_page():
 @app.route('/Page-1')
 @flask_login.login_required
 def buyPage():
-    return render_template('Page-1.html')
+    return render_template('Page-1')
 
 @app.route('/urlBox')
 @flask_login.login_required
