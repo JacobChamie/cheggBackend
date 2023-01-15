@@ -84,7 +84,11 @@ def getAnswer():
     parseAnswer = Downloader.main(input_json)
     parseAnswer = str(parseAnswer)[10:]
     return render_template(parseAnswer)
-    
+
+@app.errorhandler(Exception)
+def all_exception_handler(error):
+    return "Exception Occurred: " + str(error)
+
 @login_manager.unauthorized_handler
 def handle_needs_login():
     flask.flash('You need to login first.')
