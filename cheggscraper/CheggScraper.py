@@ -239,7 +239,7 @@ class CheggScraper:
         @rtype: (bool, str)
         """
         chapter_type = False
-        match = re.search(r'chegg\.com/homework-help/questions-and-answers/([^ ?/\n]+)-q(\d+)', url)
+        match = re.search(r'chegg\.com/homework-help/questions-and-answers/([^ ?/\n]+)', url)
         if not match:
             chapter_type = True
             match = re.search(r'chegg\.com/homework-help/[^?/]+', url)
