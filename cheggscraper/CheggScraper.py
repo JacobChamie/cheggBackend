@@ -94,7 +94,7 @@ class CheggScraper:
         self.deviceFingerPrintId = self.cookie_dict.get('DFID')
 
     @staticmethod
-    def slugify(value: str, allow_unicode: bool = False) -> str:
+    def slugify(value: str, allow_unicode: bool = False):
         """
         slugify the names of files
         :param value: string to be slugify
@@ -113,7 +113,7 @@ class CheggScraper:
         return re.sub(r'[-\s]+', '-', value).strip('-_')
 
     @staticmethod
-    def render_chapter_type_html(data: dict) -> str:
+    def render_chapter_type_html(data: dict):
         """
         Render chapter type answers using data
         :param data: response from graphql url
@@ -136,7 +136,7 @@ class CheggScraper:
         return chapter_type_template.render(**_data)
 
     @staticmethod
-    def replace_src_links(html_text: str) -> str:
+    def replace_src_links(html_text: str):
         """
         Replace relative links from page, so even you are opening file without any host, still can see all contents,
         still some css and js won't load
@@ -148,7 +148,7 @@ class CheggScraper:
         return re.sub(r'src=\s*?"//(.*)?"', r'src="https://\1"', html_text)
 
     @staticmethod
-    def cookie_str_to_dict(cookie_str: str) -> dict:
+    def cookie_str_to_dict(cookie_str: str):
         """
         Convert cookie str to dict of key, value pairs
         :param cookie_str: cookie in format of string [key=value; key=value]
@@ -166,7 +166,7 @@ class CheggScraper:
         return ret
 
     @staticmethod
-    def parse_json(json_string: str) -> dict:
+    def parse_json(json_string: str):
         """
         just parse json
         :param json_string: json data in format of string
@@ -182,7 +182,7 @@ class CheggScraper:
             raise e
 
     @staticmethod
-    def dict_to_cookie_str(cookie_dict: dict) -> str:
+    def dict_to_cookie_str(cookie_dict: dict):
         """
         Convert dict to cookie string
         :param cookie_dict: dictionary of cookie, key value pairs
@@ -200,7 +200,7 @@ class CheggScraper:
         return cookie_str
 
     @staticmethod
-    def parse_cookie(cookie_path: str) -> str:
+    def parse_cookie(cookie_path: str):
         """
         Parse cookie from cookie_path
         :param cookie_path: path of cookie file
@@ -246,7 +246,7 @@ class CheggScraper:
         return chapter_type, q_id, 'https://www.' + match.group(0)
 
     @staticmethod
-    def final_touch(html_text: str) -> str:
+    def final_touch(html_text: str):
         """
         Final changes to final html code, like changing class of some divs
         """
@@ -260,7 +260,7 @@ class CheggScraper:
 
     def _web_response(self, url: str, headers: dict = None, extra_headers: dict = None, expected_status: tuple = (200,),
                       note: str = None, error_note: str = "Error in request", post: bool = False, data: dict = None,
-                      _json=None, raise_exception=False) -> Response:
+                      _json=None, raise_exception=False):
         """
         Returns response from web
         """
@@ -292,7 +292,7 @@ class CheggScraper:
 
     def _get_response_text(self, url: str, headers: dict = None, extra_headers: dict = None,
                            expected_status: tuple = (200,), note: str = None,
-                           error_note: str = "Error in request", raise_exception=False) -> str:
+                           error_note: str = "Error in request", raise_exception=False):
         """
         text response from web
         :return: Text response from web
@@ -309,7 +309,7 @@ class CheggScraper:
 
     def _get_response_dict(self, url: str, headers: dict = None, extra_headers: dict = None,
                            expected_status: tuple = (200,), note: str = None, error_note: str = "Error in request",
-                           post: bool = False, data: dict = None, _json=None, raise_exception=False) -> dict:
+                           post: bool = False, data: dict = None, _json=None, raise_exception=False):
         """
         dict response from web
         :return: json response from web
@@ -324,7 +324,7 @@ class CheggScraper:
         return self.parse_json(response.text)
 
     @staticmethod
-    def _parse_heading(soup: BeautifulSoup) -> str:
+    def _parse_heading(soup: BeautifulSoup):
         """
         Parse heading from html
         @param soup: BeautifulSoup from chegg_html
@@ -348,7 +348,7 @@ class CheggScraper:
             logging.info(msg=f"Heading: {heading}")
         return str(heading)
 
-    def _get_non_chapter_type_data(self, legacy_id: int, auth_token: str) -> dict:
+    def _get_non_chapter_type_data(self, legacy_id: int, auth_token: str):
         """
         Get non chapter type quetion and answer data from chegg api
         """
@@ -389,7 +389,7 @@ class CheggScraper:
 
         return data
 
-    def _get_chapter_type_data(self, token: str, html_text: str) -> dict:
+    def _get_chapter_type_data(self, token: str, html_text: str):
         chapter_id = str(re.search(r'\?id=(\d+).*?isbn', html_text).group(1))
         isbn13 = str(re.search(r'"isbn13":"(\d+)"', html_text).group(1))
         problemId = str(re.search(r'"problemId":"(\d+)"', html_text).group(1))
