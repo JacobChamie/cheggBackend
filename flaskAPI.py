@@ -74,7 +74,9 @@ def buyPage():
 def urlLink():
     url = request.args.get('urlBox')
     parseAnswer = Downloader.main(url)
+    print(parseAnswer)
     parseAnswer = str(parseAnswer)[10:]
+    print(parseAnswer)
     return render_template(parseAnswer)
 
 @app.route('/get', methods=['GET'])
