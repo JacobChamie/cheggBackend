@@ -47,7 +47,7 @@ def request_loader(request):
     return user
 
 @app.route('/')
-@flask_login.login_required
+#@flask_login.login_required
 def homepage():
     return render_template('index.html')
 
@@ -65,12 +65,12 @@ def login_page():
     return 'Bad login'
 
 @app.route('/Page-1.html')
-@flask_login.login_required
+#@flask_login.login_required
 def buyPage():
     return render_template('Page-1.html')
 
 @app.route('/urlBox')
-@flask_login.login_required
+#@flask_login.login_required
 def urlLink():
     url = request.args.get('urlBox')
     parseAnswer = Downloader.main(url)
@@ -78,7 +78,7 @@ def urlLink():
     return render_template(parseAnswer)
 
 @app.route('/get', methods=['GET'])
-@flask_login.login_required
+#@flask_login.login_required
 def getAnswer():
     input_json = request.args.get('link')
     parseAnswer = Downloader.main(input_json)
