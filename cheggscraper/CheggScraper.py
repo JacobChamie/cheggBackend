@@ -282,9 +282,9 @@ class CheggScraper:
             )
 
         if response.status_code not in expected_status:
-            #logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}')
-            #if raise_exception:
-                #raise Exception(response.status_code)
+            logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}, happenedin web response.')
+            if raise_exception:
+                raise Exception(response.status_code)
             return response
         if note:
             logging.info(msg=note)
@@ -303,8 +303,8 @@ class CheggScraper:
                                       expected_status=expected_status, note=note,
                                       error_note=error_note, raise_exception=raise_exception)
         logging.info(msg=f'::response status code: {response.status_code}')
-        #if response.status_code not in expected_status:
-            #raise Exception(f'Expected status code {expected_status} but got {response.status_code}\n{error_note}')
+        if response.status_code not in expected_status:
+            raise Exception(f'Expected status code {expected_status} but got {response.status_code}\n{error_note}, happened right here get_response_text..')
         return response.text
 
     def _get_response_dict(self, url: str, headers: dict = None, extra_headers: dict = None,
