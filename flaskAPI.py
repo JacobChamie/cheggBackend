@@ -98,6 +98,3 @@ def handle_needs_login():
 def logout():
     flask_login.logout_user()
     return 'Logged out'
-if __name__ == '__main__':  
-    app.debug = True
-    app.run(host="0.0.0.0")
