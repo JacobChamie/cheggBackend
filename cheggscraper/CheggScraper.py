@@ -20,7 +20,6 @@ logging.basicConfig(filename='scraper.log', filemode='w', level=logging.DEBUG)
 
 main_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'template.html'))
 chapter_type_template = Environment(loader=BaseLoader).from_string(read_text('templates', 'chapter_type_frame.html'))
-
 # _proxies = {
 #     "http": 'http://icanoyasb9fc6z:yvmupac5z7wquat9nvqfabgpsp344@us-east-static-09.quotaguard.com:9293',
 #     "https": 'http://icanoyasb9fc6z:yvmupac5z7wquat9nvqfabgpsp344@us-east-static-09.quotaguard.com:9293'
@@ -274,12 +273,13 @@ class CheggScraper:
                 url=url,
                 headers=headers,
                 json=_json,
-                data=data
+                data=data,
             )
         else:
             response = requests.get(
                 url=url,
-                headers=headers)
+                headers=headers,
+            )
 
         if response.status_code not in expected_status:
             logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}')
