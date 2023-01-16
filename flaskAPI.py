@@ -74,9 +74,7 @@ def buyPage():
 def urlLink():
     url = request.args.get('urlBox')
     parseAnswer = Downloader.main(url)
-    print(parseAnswer)
     parseAnswer = str(parseAnswer)[10:]
-    print(parseAnswer)
     return render_template(parseAnswer)
 
 @app.route('/get', methods=['GET'])
@@ -100,5 +98,7 @@ def handle_needs_login():
 def logout():
     flask_login.logout_user()
     return 'Logged out'
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 if __name__ == '__main__':  
     app.run(debug=True)
