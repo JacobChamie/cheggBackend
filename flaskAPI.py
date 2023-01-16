@@ -87,7 +87,7 @@ def getAnswer():
 
 @app.errorhandler(Exception)
 def all_exception_handler(error):
-    return error
+    return "Error occurred:" + str(error)
 
 @login_manager.unauthorized_handler
 def handle_needs_login():
