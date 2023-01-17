@@ -521,8 +521,7 @@ class CheggScraper:
             raise Exception("Token not found")
 
         # static
-        #auth_token = "TnNZS3dJMGxMdVhBQWQwenFTMHFlak5UVXAwb1l1WDY6R09JZVdFRnVvNndRRFZ4Ug=="
-        auth_token = "7efcdaf20df247668add34e4d99b8895_1673746676866_30_UDF9_13ck"
+        auth_token = "TnNZS3dJMGxMdVhBQWQwenFTMHFlak5UVXAwb1l1WDY6R09JZVdFRnVvNndRRFZ4Ug=="
         headers, heading, question_div, answers__ = self._parse(
             html_text=html_res_text,
             q_id=q_id,
