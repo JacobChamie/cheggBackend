@@ -71,7 +71,7 @@ class CheggScraper:
 
         self.headers = {
             'authority': 'www.chegg.com',
-            # 'cache-control': 'max-age=0',
+            'cache-control': 'max-age=0',
             "Accept-Encoding": "gzip, deflate, br",
             'accept-language': 'en-US,en;q=0.9',
             'cookie': self.cookie,
@@ -282,7 +282,7 @@ class CheggScraper:
             )
 
         if response.status_code not in expected_status:
-            logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}, happenedin web response.')
+            logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}')
             if raise_exception:
                 raise Exception(response.status_code)
             return response
@@ -521,8 +521,8 @@ class CheggScraper:
             raise Exception("Token not found")
 
         # static
-        auth_token = "TnNZS3dJMGxMdVhBQWQwenFTMHFlak5UVXAwb1l1WDY6R09JZVdFRnVvNndRRFZ4Ug=="
-
+        #auth_token = "TnNZS3dJMGxMdVhBQWQwenFTMHFlak5UVXAwb1l1WDY6R09JZVdFRnVvNndRRFZ4Ug=="
+        auth_token = "7efcdaf20df247668add34e4d99b8895_1673746676866_30_UDF9_13ck"
         headers, heading, question_div, answers__ = self._parse(
             html_text=html_res_text,
             q_id=q_id,
