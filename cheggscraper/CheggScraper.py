@@ -280,7 +280,7 @@ class CheggScraper:
                 url=url,
                 headers=headers,
             )
-
+        
         if response.status_code not in expected_status:
             logging.error(msg=f'Expected status codes {expected_status} but got {response.status_code}\n{error_note}')
             if raise_exception:
@@ -519,7 +519,7 @@ class CheggScraper:
 
         if chapter_type and not token:
             raise Exception("Token not found")
-
+        
         # static
         auth_token = "TnNZS3dJMGxMdVhBQWQwenFTMHFlak5UVXAwb1l1WDY6R09JZVdFRnVvNndRRFZ4Ug=="
         headers, heading, question_div, answers__ = self._parse(
@@ -529,7 +529,7 @@ class CheggScraper:
             token=token,
             auth_token=auth_token
         )
-
+        
         rendered_html = self._render_html(url, headers, heading, question_div, answers__)
 
         file_path = self._save_html_file(rendered_html, heading, None, file_name_format)
